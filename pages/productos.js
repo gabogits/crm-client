@@ -1,8 +1,29 @@
 
 import Layout from "../components/Layout"
+import Producto from "../components/Producto"
 import Link from "next/link"
+import {gql, useQuery} from "@apollo/client"
 
+const OBTENER_PRODUCTOS = gql`
+query {
+  obtenerProductos {
+    id
+    nombre
+    precio
+    existencia
+    creado
+  }
+}
+`;
 const  Productos = ()=> {
+
+  const {data, loading, error} = useQuery(OBTENER_PRODUCTOS)
+   // console.log(data)
+   // console.log(loading)
+   // console.log(error)
+
+   if(loading) return 'cargando';
+
   return (
     <Layout>
      <h1 className="text-2xl text-gray-800 font-light">Productos</h1>
@@ -25,7 +46,11 @@ const  Productos = ()=> {
   </thead>
 
   <tbody className="bg-white">
-  
+    {
+      data.obtenerProductos.map(producto => (
+        <Producto key= {producto.id} producto={producto} />
+      ))
+    }
   </tbody>
 </table>
     </Layout>

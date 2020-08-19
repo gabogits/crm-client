@@ -34,7 +34,7 @@ const Login = () => {
       password: Yup.string().required("El password es obligatorio"),
     }),
     onSubmit: async (valores) => {
-      console.log(valores);
+     // console.log(valores);
       const { email, password } = valores;
       try {
         const { data } = await autenticarUsuario({
@@ -45,7 +45,7 @@ const Login = () => {
             },
           },
         });
-        console.log(data);
+        //console.log(data);
         guardarMensaje("Autenticando...");
         //guardar el token en local storage
         const { token } = data.autenticarUsuario;

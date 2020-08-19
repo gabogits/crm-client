@@ -64,7 +64,7 @@ const NuevaCuenta = () => {
         .min(6, "El password debe ser de al menos 6 caracteres"),
     }),
     onSubmit: async (valores) => {
-      console.log("enviando", valores);
+     // console.log("enviando", valores);
       const { nombre, apellido, email, password } = valores;
       try {
         const {data} = await nuevoUsuario({ //data es la respuesta del servidor lo que esperabas como retorno en tu mutation 
@@ -77,7 +77,7 @@ const NuevaCuenta = () => {
             },
           },
         });
-        console.log(data)
+       // console.log(data)
       //usuario creado correctamente
       guardarMensaje(`se creo correctamente el usuario: ${data.nuevoUsuario.nombre}`)
       setTimeout(() => {
