@@ -15,7 +15,6 @@ query {
     nombre
     precio
     existencia
-    creado
   }
 }
 `;

@@ -4,7 +4,7 @@ import {useRouter} from "next/router"
 import SideBar from "./SideBar";
 import Header from "./Header"
 
-const Layout = ({children}) => {
+const Layout = (props) => {
 
     const  router = useRouter()
     return (  
@@ -18,7 +18,7 @@ const Layout = ({children}) => {
       {router.pathname === '/login' || router.pathname === '/nuevacuenta' ? (
                 <div className="bg-gray-800 min-h-screen flex flex-col justify-center">
                     <div>
-                        {children}
+                        {props.children}
                     </div>
                     
                 </div>
@@ -30,7 +30,7 @@ const Layout = ({children}) => {
                        
                         <main className="sm:w-2/3 xl:w-4/5 sm:min-h-screen p-5">
                             <Header />
-                            {children}
+                            {props.children}
                         </main>
                         
                     </div>

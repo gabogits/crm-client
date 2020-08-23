@@ -16,11 +16,16 @@ query  obtenerClientesVendedor {
 }
 `;
 
-const  Home = ()=> {
+const  Home = (props)=> {
+ 
   const router = useRouter()
   //Consulta de Apollo
+  
 
-  const {data, loading, error} = useQuery(OBTENER_CLIENTES_USUARIO);
+    const {data, loading, error} = useQuery(OBTENER_CLIENTES_USUARIO);
+  
+  
+ 
   //console.log(data)
   //console.log(loading)
   //console.log(error)

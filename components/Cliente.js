@@ -41,7 +41,7 @@ const Cliente = ({cliente}) => {
     const editarCliente = ()=> {
         Router.push({
             pathname: "/editarcliente/[id]",
-            query: {id, nombre }
+            query: {id}
         })
     }
     const confirmarEliminarCliente = () => {

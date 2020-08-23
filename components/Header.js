@@ -21,11 +21,11 @@ const Header = () => {
 
     //Proteger que no accedamos a data antes de tener resultados a data
     if(loading) return null;
-
-    if(!data) {
-        return router.push('/login')
-    }
     const {nombre, apellido} = data.obtenerUsuario
+    if(!data.obtenerUsuario) {
+        return  router.push('/login')
+    }
+ 
 
     const cerrarSesion = () => {
         localStorage.removeItem('token');
